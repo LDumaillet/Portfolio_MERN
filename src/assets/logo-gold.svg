@@ -1,0 +1,179 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+
+<!-- ========================================= -->
+<!--               DÉFINITIONS                 -->
+<!-- ========================================= -->
+<defs>
+
+  <!-- Dégradés -->
+  <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#F0C866"/>
+    <stop offset="50%" stop-color="#D4A843"/>
+    <stop offset="100%" stop-color="#9C7A2E"/>
+  </linearGradient>
+
+  <linearGradient id="ivoryGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#F5F0E8" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#D4A843" stop-opacity="0.3"/>
+  </linearGradient>
+
+  <radialGradient id="centerGlow">
+    <stop offset="0%" stop-color="#F5F0E8" stop-opacity="0.7"/>
+    <stop offset="50%" stop-color="#D4A843" stop-opacity="0.35"/>
+    <stop offset="100%" stop-color="#0A0A0B" stop-opacity="0"/>
+  </radialGradient>
+
+  <!-- Glow / Shadows -->
+  <filter id="glow"><feGaussianBlur stdDeviation="4"/></filter>
+  <filter id="strongGlow"><feGaussianBlur stdDeviation="8"/></filter>
+  <filter id="softGlow">
+    <feGaussianBlur stdDeviation="3"/>
+    <feGaussianBlur stdDeviation="10"/>
+  </filter>
+
+  <!-- Cercle pour le texte -->
+  <path id="txtCircle" d="
+    M250,250
+    m-180,0
+    a180,180 0 1,1 360,0
+    a180,180 0 1,1 -360,0
+  "/>
+
+</defs>
+
+<!-- ========================================= -->
+<!--                FOND + HALO                -->
+<!-- ========================================= -->
+
+<rect width="500" height="500" fill="none" rx="20" ry="20"/>
+<circle cx="250" cy="250" r="250" fill="url(#centerGlow)" opacity="0.3"/>
+
+<!-- ========================================= -->
+<!--      GRILLE ÉLÉGANTE EN ARRIÈRE-PLAN      -->
+<!-- ========================================= -->
+<g opacity="0.06">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 0 40" fill="none" stroke="#D4A843" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="500" height="500" fill="url(#grid)"/>
+</g>
+
+<!-- ========================================= -->
+<!--          ANNEAUX ORBITAUX SOBRES          -->
+<!-- ========================================= -->
+
+<g transform="translate(250, 250)" opacity="0.14">
+  <ellipse rx="230" ry="80" fill="none" stroke="#D4A843" stroke-width="1.5" transform="rotate(-25)"/>
+  <ellipse rx="210" ry="70" fill="none" stroke="url(#ivoryGlow)" stroke-width="1" transform="rotate(-25)"/>
+  <ellipse rx="250" ry="90" fill="none" stroke="#D4A843" stroke-width="1" stroke-dasharray="8,8" transform="rotate(-25)"/>
+</g>
+
+<!-- ========================================= -->
+<!--           HEXAGONES MULTIPLES            -->
+<!-- ========================================= -->
+<g transform="translate(250, 250)">
+
+  <g opacity="0.16">
+    <path d="M0 -160 L138 -80 L138 80 L0 160 L-138 80 L-138 -80 Z"
+          fill="none" stroke="url(#ivoryGlow)" stroke-width="2"/>
+  </g>
+
+  <g opacity="0.18" transform="rotate(15)">
+    <path d="M0 -140 L121 -70 L121 70 L0 140 L-121 70 L-121 -70 Z"
+          fill="url(#goldGradient)" opacity="0.18"/>
+    <path d="M0 -140 L121 -70 L121 70 L0 140 L-121 70 L-121 -70 Z"
+          fill="none" stroke="#D4A843" stroke-width="2" stroke-dasharray="12 6"/>
+  </g>
+
+  <g opacity="0.22" transform="rotate(-15)">
+    <path d="M0 -120 L104 -60 L104 60 L0 120 L-104 60 L-104 -60 Z"
+          fill="none" stroke="#D4A843" stroke-width="1.5"/>
+  </g>
+
+</g>
+
+<!-- ========================================= -->
+<!--    LIGNES DE CONNEXIONS ÉNERGÉTIQUES      -->
+<!-- ========================================= -->
+<g opacity="0.16" stroke="url(#ivoryGlow)" stroke-width="2" fill="none">
+  <path d="M100 100 Q150 150 200 180"/>
+  <path d="M400 400 Q350 350 300 320"/>
+  <path d="M400 100 Q350 150 300 180"/>
+  <path d="M100 400 Q150 350 200 320"/>
+</g>
+
+<!-- ========================================= -->
+<!--        TEXTE CIRCULAIRE EN ROTATION       -->
+<!-- ========================================= -->
+<text font-size="18" fill="#D4A843"
+      font-family="'Bebas Neue', 'Eurostile', sans-serif"
+      letter-spacing="36">
+  <textPath href="#txtCircle">
+    ✦ DÉVELOPPEUR FULL STACK
+  </textPath>
+
+  <animateTransform
+    attributeName="transform"
+    type="rotate"
+    from="0 250 250"
+    to="360 250 250"
+    dur="18s"
+    repeatCount="indefinite"/>
+</text>
+
+<!-- ========================================= -->
+<!--               LOGO LD                     -->
+<!-- ========================================= -->
+
+<g transform="translate(250,250)">
+
+  <!-- ==== LETTRE L ==== -->
+  <g transform="translate(-120,-90)">
+    <rect x="0" y="0" width="45" height="180" fill="#F5F0E8"/>
+    <rect x="0" y="135" width="100" height="45" fill="#F5F0E8"/>
+
+    <!-- Accents -->
+    <rect x="3" y="3" width="4" height="174" fill="#F5F0E8"/>
+    <rect x="3" y="138" width="94" height="4" fill="#F5F0E8"/>
+
+    <rect x="30" y="0" width="2" height="180" fill="#D4A843" opacity="0.6"/>
+    <rect x="0" y="150" width="100" height="2" fill="#D4A843" opacity="0.6"/>
+  </g>
+
+  <!-- ==== LETTRE D ==== -->
+  <g transform="translate(25,-90)">
+    <rect x="0" y="0" width="45" height="180" fill="url(#goldGradient)"/>
+    <path d="M45 0 L110 0 Q123 0 123 45 L123 135 Q123 175 110 180 L45 180 Z"
+          fill="url(#goldGradient)"/>
+
+    <!-- Bord interne -->
+    <path d="M45 3 L108 3 Q115 3 115 40 L115 130 Q115 175 105 177 L45 177"
+          fill="none" stroke="#F0C866" stroke-width="3" opacity="0.7"/>
+
+    <!-- Accent -->
+    <rect x="20" y="0" width="2" height="180" fill="#F5F0E8" opacity="0.4"/>
+  </g>
+
+</g>
+
+<!-- ========================================= -->
+<!--             NOYAU ANIMÉ                  -->
+<!-- ========================================= -->
+<g transform="translate(250,250)">
+  <circle r="10" fill="url(#ivoryGlow)">
+    <animate attributeName="r"
+      values="10;14;10"
+      dur="1.8s"
+      repeatCount="indefinite"/>
+  </circle>
+
+  <circle r="5" fill="#F5F0E8">
+    <animate attributeName="r"
+      values="5;7;5"
+      dur="1.8s"
+      repeatCount="indefinite"/>
+  </circle>
+</g>
+</svg>

@@ -1,0 +1,146 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 40px;
+  transition:
+    background 0.4s,
+    padding 0.4s,
+    backdrop-filter 0.4s;
+}
+.scrolled {
+  background: rgba(10, 10, 11, 0.9);
+  backdrop-filter: blur(20px);
+  padding: 14px 40px;
+  border-bottom: 1px solid rgba(245, 240, 232, 0.06);
+}
+.logo {
+  height: 5vw;
+  width: auto;
+  flex-shrink: 0;
+}
+.links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.link {
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+  position: relative;
+}
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s var(--ease);
+}
+.link:hover {
+  color: var(--ivory);
+}
+.link:hover::after {
+  width: 100%;
+}
+
+.avail {
+  font-size: 12px;
+  color: var(--gold);
+  border: 1px solid var(--gold-b);
+  padding: 7px 18px;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+  transition: background 0.2s;
+}
+.avail::before {
+  content: "● ";
+  font-size: 9px;
+  animation: blink 2s infinite;
+}
+.avail:hover {
+  background: var(--gold-dim);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.burger span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--ivory);
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+}
+.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.open span:nth-child(2) {
+  opacity: 0;
+}
+.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile menu */
+.mobile {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.mobile ul {
+  list-style: none;
+  text-align: center;
+}
+.mobileOpen {
+  opacity: 1;
+  pointer-events: all;
+}
+.mobileLink {
+  display: block;
+  font-family: var(--ff-display);
+  font-size: 40px;
+  color: var(--muted);
+  padding: 10px 0;
+  transition: color 0.2s;
+}
+.mobileLink:hover {
+  color: var(--gold);
+}
+
+@media (max-width: 768px) {
+  .links,
+  .avail {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+  .logo {
+    height: 5vh;
+  }
+}
